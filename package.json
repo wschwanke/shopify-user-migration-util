@@ -7,7 +7,7 @@
     "url": "https://github.com/wschwanke/shopify-user-mirgration-util"
   },
   "author": "Will Schwanke <wschwanke@gmail.com>",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "build": "yarn run build-sass && yarn run build-ts && yarn run tslint",
     "test": "jest --forceExit --coverage --verbose",
@@ -19,6 +19,7 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
