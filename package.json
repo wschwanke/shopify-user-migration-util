@@ -9,17 +9,12 @@
   "author": "Will Schwanke <wschwanke@gmail.com>",
   "license": "GNU GPLv3",
   "scripts": {
-    "start": "yarn run serve",
     "build": "yarn run build-sass && yarn run build-ts && yarn run tslint",
-    "serve": "node dist/index.js",
-    "watch-node": "nodemon dist/index.js",
     "test": "jest --forceExit --coverage --verbose",
-    "watch-test": "yarn run test -- --watchAll",
+    "watch-test": "yarn run test --watchAll",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "debug": "yarn run build && yarn run watch-debug",
-    "serve-debug": "nodemon --inspect dist/index.js"
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "dotenv": "^6.2.0",
