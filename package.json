@@ -1,10 +1,10 @@
 {
-  "name": "typescript-init",
+  "name": "shopify-user-mirgration-util",
   "version": "1.0.0",
-  "description": "A starting point for Node.js apps with TypeScript",
+  "description": "Migrates users from one online store to Shopify by converting a csv from one store into one that will work with Shopify.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wschwanke/typescript-init"
+    "url": "https://github.com/wschwanke/shopify-user-mirgration-util"
   },
   "author": "Will Schwanke <wschwanke@gmail.com>",
   "license": "GNU GPLv3",
