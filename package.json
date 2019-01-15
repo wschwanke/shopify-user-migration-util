@@ -7,18 +7,22 @@
     "url": "https://github.com/wschwanke/shopify-user-mirgration-util"
   },
   "author": "Will Schwanke <wschwanke@gmail.com>",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-or-later",
   "scripts": {
-    "build": "yarn run build-sass && yarn run build-ts && yarn run tslint",
+    "scmu": "node ./dist/scmu.js",
+    "build": "tsc && yarn tslint",
+    "watch": "tsc -w",
     "test": "jest --forceExit --coverage --verbose",
     "watch-test": "yarn run test --watchAll",
-    "build-ts": "tsc",
-    "watch-ts": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
+    "@types/minimist": "^1.2.0",
+    "csv-parse": "^4.3.0",
+    "csv-stringify": "^5.1.2",
     "dotenv": "^6.2.0",
     "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
