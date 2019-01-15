@@ -157,3 +157,5 @@ $RECYCLE.BIN/
 *.code-workspace
 
 /dist
+*.csv
+/csvs

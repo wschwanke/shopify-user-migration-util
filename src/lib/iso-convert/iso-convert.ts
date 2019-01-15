@@ -3,48 +3,52 @@
  */
 import { us } from './states';
 
-const countryAbrevToName = (countryAbrev: string): string => {
-  if (countryAbrev === 'US' || countryAbrev === 'Un') {
+/**
+ * Takes a country's abbreviation
+ * @param countryAbv a string that represents a country's abbreviation
+ */
+const countryAbvToName = (countryAbv: string): string => {
+  if (countryAbv === 'US' || countryAbv === 'Un') {
     return us.name;
   }
-  return countryAbrev;
+  return countryAbv;
 };
 
-const countryNameToAbrev = (countryName: string): string => {
+const countryNameToAbv = (countryName: string): string => {
   if (countryName === 'United States of America' || countryName === 'United States') {
     return us.isoCode;
   }
   return countryName;
 };
 
-const stateAbrevToName = (stateAbrev: string): string => {
-  const stateName: string = us.abrevList[stateAbrev];
+const stateAbvToName = (stateAbv: string): string => {
+  const stateName: string = us.abvList[stateAbv];
   if (typeof stateName !== 'undefined') {
     return stateName;
   }
-  return stateAbrev;
+  return stateAbv;
 };
 
-const stateNameToAbrev = (stateName: string): string => {
-  const stateAbrev: string = us.nameList[stateName];
+const stateNameToAbv = (stateName: string): string => {
+  const stateAbv: string = us.nameList[stateName];
   if (typeof stateName !== 'undefined') {
-    return stateAbrev;
+    return stateAbv;
   }
   return stateName;
 };
 
 const isoStateConvert = (state: string) => {
   if (state.length === 2) {
-    return stateAbrevToName(state);
+    return stateAbvToName(state);
   }
-  return stateNameToAbrev(state);
+  return stateNameToAbv(state);
 };
 
 const isoCountryConvert = (country: string) => {
   if (country.length === 2) {
-    return countryAbrevToName(country);
+    return countryAbvToName(country);
   }
-  return countryNameToAbrev(country);
+  return countryNameToAbv(country);
 };
 
 export { isoCountryConvert, isoStateConvert };
