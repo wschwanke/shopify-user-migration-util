@@ -9,11 +9,12 @@ import minimist from 'minimist';
  */
 import fs from 'fs';
 import { logger } from './lib/logger';
+import { syncStringify } from './lib/sync-parse';
 
 /**
  * Supported shops
  */
-import { csCart } from './models';
+import { csCart } from './shops';
 
 // Parse the command line arguments
 const argv = minimist(process.argv.slice(2));
@@ -38,16 +39,18 @@ try {
   logger.error(`There was an error: ${err}`);
 }
 
-let shopifyCSVString = '';
+let shopifyCSVStringsArray: any[] = [];
 
 // Check to see if the shop exists in our list of supported migrations
 switch (argv.s) {
   case 'cscart':
-    shopifyCSVString = csCart(csvFileString);
+    shopifyCSVStringsArray = csCart(csvFileString);
     break;
   default:
     logger.error('Unsupported shop.');
 }
 
 // Write the file to the current folder
-fs.writeFileSync('./csvs/shopify-customers.csv', shopifyCSVString, { encoding: 'utf8' });
+shopifyCSVStringsArray.forEach((csvString, index) => {
+  fs.writeFileSync(`./csvs/shopify-customers-${index}.csv`, syncStringify(csvString), { encoding: 'utf8' });
+});
