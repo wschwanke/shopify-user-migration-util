@@ -36,6 +36,12 @@ const fixCountryCode = (code: string) => {
   switch (code) {
     case 'Un':
       return 'US';
+    case 'Fr':
+      return 'FR';
+    case 'Ca':
+      return 'CA';
+    case 'Po':
+      return 'PO';
     default:
       return code;
   }

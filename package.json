@@ -10,7 +10,7 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "scmu": "node ./dist/scmu.js",
-    "build": "tsc && yarn tslint",
+    "build": "tsc",
     "watch": "tsc -w",
     "test": "jest --forceExit --coverage --verbose",
     "watch-test": "yarn run test --watchAll",
