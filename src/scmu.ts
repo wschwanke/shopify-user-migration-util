@@ -30,14 +30,16 @@ if (!has(argv, 's')) {
 }
 
 // Initialize the csv file string
-let csvFileString = '';
+const csvFileString: string[] = [];
 
 // Try and load the file
-try {
-  csvFileString = fs.readFileSync(argv._[0], { encoding: 'utf8', flag: 'r+' });
-} catch (err) {
-  logger.error(`There was an error: ${err}`);
-}
+argv._.forEach((filePath) => {
+  try {
+    csvFileString.push(fs.readFileSync(filePath, { encoding: 'utf8', flag: 'r+' }));
+  } catch (err) {
+    logger.error(`There was an error: ${err}`);
+  }
+});
 
 let shopifyCSVStringsArray: any[] = [];
 

@@ -32,9 +32,9 @@ const options = {
   },
 };
 
-const migrate = (csvFileString: string) => {
+const migrate = (csvFileString: string[]) => {
   const { transform } = options;
-  const csvArray = syncParse(csvFileString, ';');
+  const csvArray = syncParse(csvFileString[0], ';');
   const migratedCustomers: any[] = [[]];
   let stats = {
     invalidEmails: 0,
