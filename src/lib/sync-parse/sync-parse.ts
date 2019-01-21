@@ -9,10 +9,11 @@ import stringify from 'csv-stringify/lib/sync';
  * @param file the path to a file you want to parse
  * @param delimiter used to tell the csv parser where a value ends
  */
-const syncParse = (file: string, delimiter: string = ','): any[] => {
+const syncParse = (file: string, delimiter: string = ',', objName: string = '//none//'): any[] => {
   return parse(file, {
     columns: true,
     delimiter,
+    objname: objName !== '//none//' ? objName : undefined,
   });
 };
 
