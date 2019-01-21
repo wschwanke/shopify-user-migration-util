@@ -47,9 +47,10 @@ const fixCountryCode = (code: string) => {
   }
 };
 
-const csCart = (csvFileString: string) => {
+const csCart = (csvFileString: string[]) => {
   const { transform } = csCartOptions;
-  const csvArray = syncParse(csvFileString, ';');
+  // Choose the first index, cs cart will only ever have one file.
+  const csvArray = syncParse(csvFileString[0], ';');
   const migratedCustomers: any[] = [[]];
   let stats = {
     invalidEmails: 0,

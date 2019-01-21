@@ -11,7 +11,7 @@
   "scripts": {
     "scmu": "node ./dist/scmu.js",
     "build": "tsc",
-    "watch": "tsc -w",
+    "dev": "tsc -w",
     "test": "jest --forceExit --coverage --verbose",
     "watch-test": "yarn run test --watchAll",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
